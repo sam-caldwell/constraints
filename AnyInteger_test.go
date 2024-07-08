@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func AnyIntegerFunc[T AllInteger](i T) bool {
+func AnyIntegerFunc[T AnyInteger](i T) bool {
 	return any(i) == any(i)
 }
 
