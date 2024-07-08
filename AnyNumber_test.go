@@ -5,8 +5,8 @@ import (
 	"testing"
 )
 
-func testAnyNumberFunc[T AnyNumber](n T) bool {
-	return true
+func AnyNumberFunc[T AnyNumber](i T) bool {
+	return any(i) != nil
 }
 
 func TestAnyNumber(t *testing.T) {
@@ -16,22 +16,22 @@ func TestAnyNumber(t *testing.T) {
 		}
 	}
 
-	assert(testAnyNumberFunc(int(0)))
-	assert(testAnyNumberFunc(int8(0)))
-	assert(testAnyNumberFunc(int16(0)))
-	assert(testAnyNumberFunc(int32(0)))
-	assert(testAnyNumberFunc(int64(0)))
+	assert(AnyNumberFunc(int(0)))
+	assert(AnyNumberFunc(int8(0)))
+	assert(AnyNumberFunc(int16(0)))
+	assert(AnyNumberFunc(int32(0)))
+	assert(AnyNumberFunc(int64(0)))
 
-	assert(testAnyNumberFunc(uint(0)))
-	assert(testAnyNumberFunc(uint8(0)))
-	assert(testAnyNumberFunc(uint16(0)))
-	assert(testAnyNumberFunc(uint32(0)))
-	assert(testAnyNumberFunc(uint64(0)))
+	assert(AnyNumberFunc(uint(0)))
+	assert(AnyNumberFunc(uint8(0)))
+	assert(AnyNumberFunc(uint16(0)))
+	assert(AnyNumberFunc(uint32(0)))
+	assert(AnyNumberFunc(uint64(0)))
 
-	assert(testAnyNumberFunc(float32(0)))
-	assert(testAnyNumberFunc(float64(0)))
+	assert(AnyNumberFunc(float32(0)))
+	assert(AnyNumberFunc(float64(0)))
 
-	assert(testAnyNumberFunc(big.Int{}))
-	assert(testAnyNumberFunc(big.Float{}))
+	assert(AnyNumberFunc(big.Int{}))
+	assert(AnyNumberFunc(big.Float{}))
 
 }

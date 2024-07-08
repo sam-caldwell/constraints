@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func testNumberFunc[T Number](n T) bool {
-	return n == 0
+func NumberFunc[T Number](i T) bool {
+	return any(i) == any(i)
 }
 
 func TestNumber(t *testing.T) {
@@ -15,19 +15,19 @@ func TestNumber(t *testing.T) {
 		}
 	}
 
-	assert(testNumberFunc(int(0)))
-	assert(testNumberFunc(int8(0)))
-	assert(testNumberFunc(int16(0)))
-	assert(testNumberFunc(int32(0)))
-	assert(testNumberFunc(int64(0)))
+	assert(NumberFunc(int(0)))
+	assert(NumberFunc(int8(0)))
+	assert(NumberFunc(int16(0)))
+	assert(NumberFunc(int32(0)))
+	assert(NumberFunc(int64(0)))
 
-	assert(testNumberFunc(uint(0)))
-	assert(testNumberFunc(uint8(0)))
-	assert(testNumberFunc(uint16(0)))
-	assert(testNumberFunc(uint32(0)))
-	assert(testNumberFunc(uint64(0)))
+	assert(NumberFunc(uint(0)))
+	assert(NumberFunc(uint8(0)))
+	assert(NumberFunc(uint16(0)))
+	assert(NumberFunc(uint32(0)))
+	assert(NumberFunc(uint64(0)))
 
-	assert(testNumberFunc(float32(0)))
-	assert(testNumberFunc(float64(0)))
+	assert(NumberFunc(float32(0)))
+	assert(NumberFunc(float64(0)))
 
 }
